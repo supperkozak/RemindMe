@@ -1,16 +1,23 @@
 package com.example.remindme;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.remindme.adapter.TabsPagerFragmentAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int LAYOUT = R.layout.activity_main;
+
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         initToolbar();
         initNavigationView();
+        initTabLayout();
     }
 
     private void initToolbar() {
@@ -36,5 +44,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void initNavigationView() {
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+    }
+
+    private void initTabLayout() {
+        viewPager = (ViewPager)findViewById(R.id.view_pager);
+        TabsPagerFragmentAdapter pagesAdapter = new TabsPagerFragmentAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(pagesAdapter);
+
+        tabLayout = (TabLayout)findViewById(R.id.tab_layout);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
