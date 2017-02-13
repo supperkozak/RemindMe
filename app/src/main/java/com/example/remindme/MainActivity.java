@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initTabLayout() {
         viewPager = (ViewPager)findViewById(R.id.view_pager);
-        TabsPagerFragmentAdapter pagesAdapter = new TabsPagerFragmentAdapter(getSupportFragmentManager());
+        TabsPagerFragmentAdapter pagesAdapter = new TabsPagerFragmentAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(pagesAdapter);
 
         tabLayout = (TabLayout)findViewById(R.id.tab_layout);
