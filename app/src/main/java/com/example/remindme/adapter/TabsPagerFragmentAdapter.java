@@ -6,10 +6,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.remindme.fragment.ExampleFragment;
 
-/**
- * Created by asim on 10/02/2017.
- */
-
 public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
 
     private String[] tabs;
@@ -18,7 +14,7 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
         super(fm);
         tabs = new String[]{
                 "Tab1",
-                "Tab2",
+                "Notification",
                 "Tab3"
         };
 
