@@ -77,6 +77,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showNotificationTab(){
-        viewPager.setCurrentItem(Constants.TAB_TWO);
+        viewPager.setCurrentItem(Constants.TAB_FOUR);
     }
 }
