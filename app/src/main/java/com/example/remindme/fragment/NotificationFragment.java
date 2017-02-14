@@ -12,11 +12,11 @@ import com.example.remindme.R;
 
 public class NotificationFragment extends AbstractTabFragment {
 
-    private static final int LAYOUT = R.layout.fragment_history;
+    private static final int LAYOUT = R.layout.fragment_example;
 
-    public static TodoFragment getInstance(Context context){
+    public static NotificationFragment getInstance(Context context){
         Bundle args = new Bundle();
-        TodoFragment fragment = new TodoFragment();
+        NotificationFragment fragment = new NotificationFragment();
         fragment.setArguments(args);
         fragment.setContext(context);
         fragment.setTitle(context.getString(R.string.menu_item_notification));

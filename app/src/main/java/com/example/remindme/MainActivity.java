@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    private TabsPagerFragmentAdapter pagesAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppDefault);
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(LAYOUT);
 
         initToolbar();
-        initNavigationView();
+        initDrawer();
         initTabLayout();
     }
 
@@ -45,7 +47,16 @@ public class MainActivity extends AppCompatActivity {
         toolbar.inflateMenu(R.menu.menu);
     }
 
-    private void initNavigationView() {
+    private void initTabLayout() {
+        viewPager = (ViewPager)findViewById(R.id.view_pager);
+        pagesAdapter = new TabsPagerFragmentAdapter(this, getSupportFragmentManager());
+        viewPager.setAdapter(pagesAdapter);
+
+        tabLayout = (TabLayout)findViewById(R.id.tab_layout);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private void initDrawer() {
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
@@ -65,15 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
-
-    private void initTabLayout() {
-        viewPager = (ViewPager)findViewById(R.id.view_pager);
-        TabsPagerFragmentAdapter pagesAdapter = new TabsPagerFragmentAdapter(this, getSupportFragmentManager());
-        viewPager.setAdapter(pagesAdapter);
-
-        tabLayout = (TabLayout)findViewById(R.id.tab_layout);
-        tabLayout.setupWithViewPager(viewPager);
     }
 
     private void showNotificationTab(){

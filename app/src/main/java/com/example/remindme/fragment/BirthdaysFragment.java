@@ -12,11 +12,11 @@ import com.example.remindme.R;
 
 public class BirthdaysFragment extends AbstractTabFragment {
 
-    private static final int LAYOUT = R.layout.fragment_history;
+    private static final int LAYOUT = R.layout.fragment_example;
 
-    public static TodoFragment getInstance(Context context){
+    public static BirthdaysFragment getInstance(Context context){
         Bundle args = new Bundle();
-        TodoFragment fragment = new TodoFragment();
+        BirthdaysFragment fragment = new BirthdaysFragment();
         fragment.setArguments(args);
         fragment.setContext(context);
         fragment.setTitle(context.getString(R.string.menu_item_birthdays));
@@ -35,4 +35,5 @@ public class BirthdaysFragment extends AbstractTabFragment {
     public void setContext(Context context) {
         this.context = context;
     }
+
 }

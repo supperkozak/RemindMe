@@ -12,7 +12,7 @@ import com.example.remindme.R;
 
 public class TodoFragment extends AbstractTabFragment {
 
-    private static final int LAYOUT = R.layout.fragment_history;
+    private static final int LAYOUT = R.layout.fragment_example;
 
     public static TodoFragment getInstance(Context context){
         Bundle args = new Bundle();
@@ -35,4 +35,6 @@ public class TodoFragment extends AbstractTabFragment {
     public void setContext(Context context) {
         this.context = context;
     }
+
+
 }

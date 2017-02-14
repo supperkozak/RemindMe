@@ -21,9 +21,9 @@ public class HistoryFragment extends AbstractTabFragment {
 
     private static final int LAYOUT = R.layout.fragment_history;
 
-    public static TodoFragment getInstance(Context context){
+    public static HistoryFragment getInstance(Context context){
         Bundle args = new Bundle();
-        TodoFragment fragment = new TodoFragment();
+        HistoryFragment fragment = new HistoryFragment();
         fragment.setArguments(args);
         fragment.setContext(context);
         fragment.setTitle(context.getString(R.string.menu_item_history));
@@ -44,12 +44,12 @@ public class HistoryFragment extends AbstractTabFragment {
     }
 
     private List<RemindDTO> createMockData() {
-        List<RemindDTO> remindList = new ArrayList<RemindDTO>();
-        remindList.add(new RemindDTO("Make something"));
-        remindList.add(new RemindDTO("Make something"));
-        remindList.add(new RemindDTO("Make something"));
-        remindList.add(new RemindDTO("Make something"));
-        remindList.add(new RemindDTO("Make something"));
+        List<RemindDTO> remindList = new ArrayList<>();
+        remindList.add(new RemindDTO("Make something8y9oi"));
+        remindList.add(new RemindDTO("Make someryuething"));
+        remindList.add(new RemindDTO("Make somertuthing"));
+        remindList.add(new RemindDTO("Make someewtuthing"));
+        remindList.add(new RemindDTO("Make somuewrething"));
         return remindList;
     }
 

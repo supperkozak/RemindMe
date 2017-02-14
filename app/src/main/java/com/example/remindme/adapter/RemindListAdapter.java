@@ -16,10 +16,6 @@ public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.Re
 
     private List<RemindDTO> data;
 
-    public RemindListAdapter(List<RemindDTO> data) {
-        this.data = data;
-    }
-
     @Override
     public RemindViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.remind_item, parent, false);
@@ -35,6 +31,10 @@ public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.Re
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    public RemindListAdapter(List<RemindDTO> data) {
+        this.data = data;
     }
 
     public static class RemindViewHolder extends RecyclerView.ViewHolder{
