@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.remindme.R;
-import com.example.remindme.dto.RemindDTO;
+import com.example.remindme.dto.User;
 
 import java.util.List;
 
 public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.RemindViewHolder>{
 
-    private List<RemindDTO> data;
+    private List<User> data;
 
     @Override
     public RemindViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -24,8 +24,8 @@ public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.Re
 
     @Override
     public void onBindViewHolder(RemindViewHolder holder, int position) {
-        RemindDTO remindDTO = data.get(position);
-        holder.title.setText(remindDTO.getTitle());
+        User user = data.get(position);
+        holder.title.setText(user.getUsername());
     }
 
     @Override
@@ -33,7 +33,11 @@ public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.Re
         return data.size();
     }
 
-    public RemindListAdapter(List<RemindDTO> data) {
+    public RemindListAdapter(List<User> data) {
+        this.data = data;
+    }
+
+    public void setData(List<User> data) {
         this.data = data;
     }
 
