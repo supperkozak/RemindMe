@@ -48,7 +48,7 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
         return tabs.get(position).getTitle();
     }
 
-    private void initMap(Context context) {
+    private void initMap(Context context) {      
         tabs = new HashMap<>();
         historyFragment = HistoryFragment.getInstance(context, data);
         tabs.put(0, historyFragment);
